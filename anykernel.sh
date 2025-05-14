@@ -94,7 +94,7 @@ else
 fi
 
 KSUD_PATH="/data/adb/ksud"
-ui_print "安装Zram/Lz4kd 模块?"
+ui_print "安装Zram/Lz4kd模块?"
 ui_print "音量上跳过安装；音量下安装模块"
 
 key_click=""
@@ -105,7 +105,7 @@ done
 case "$key_click" in
     "KEY_VOLUMEDOWN")
         if [ -f "$KSUD_PATH" ]; then
-            ui_print "Installing SUSFS Module..."
+            ui_print "Installing Zram/Lz4kd Module..."
             /data/adb/ksud module install "$MODULE_PATH"
             ui_print "Installation Complete"
         else
@@ -113,7 +113,7 @@ case "$key_click" in
         fi
         ;;
     "KEY_VOLUMEUP")
-        ui_print "Skipping SUSFS Module Installation"
+        ui_print "Skipping Zram/Lz4kd Module Installation"
         ;;
     *)
         ui_print "Unknown Key Input, Skipping Installation"
