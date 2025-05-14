@@ -86,22 +86,16 @@ else
 fi
 
 # 优先选择模块路径
-if [ -f "$AKHOME/ksu_module_susfs_1.5.2+_Release.zip" ]; then
-    MODULE_PATH="$AKHOME/ksu_module_susfs_1.5.2+_Release.zip"
-    ui_print "  -> Installing SUSFS module from Release (1.5.2+)"
-elif [ -f "$AKHOME/ksu_module_susfs_1.5.2+_CI.zip" ]; then
-    MODULE_PATH="$AKHOME/ksu_module_susfs_1.5.2+_CI.zip"
-    ui_print "  -> Installing SUSFS module from CI"
+if [ -f "$AKHOME/zram.zip" ]; then
+    MODULE_PATH="$AKHOME/zram.zip"
 else
     ui_print "  -> No module found!"
     exit 1
 fi
 
 KSUD_PATH="/data/adb/ksud"
-ui_print "安装 SUSFS 模块?"
+ui_print "安装Zram/Lz4kd 模块?"
 ui_print "音量上跳过安装；音量下安装模块"
-ui_print "Install susfs4ksu Module?"
-ui_print "Volume UP: NO；Volume DOWN: YES"
 
 key_click=""
 while [ "$key_click" = "" ]; do
